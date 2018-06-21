@@ -1,0 +1,153 @@
+/* app css stylesheet */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.navbar > ul {
+  z-index: 100;
+  list-style-type: none;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #4b50ac;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar > ul li {
+  float: left;
+}
+
+.navbar > ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 9px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar > ul li a:hover:not(.active) {
+  background-color: #a2a8d5;
+}
+
+.active {
+  background-color: #4b80ac;
+}
+
+.container {
+  margin-top: 45px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid pink;
+}
+
+/* Users-list */
+.user-header {
+  display: flex;
+  justify-content: center;
+  border:1px solid black;
+}
+.users-container {
+  position: relative;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: auto;
+}
+
+@media (min-width: 401px) {
+  .users-container {
+    width: 400px;
+  }
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+}
+
+.user-details {
+  display: flex;
+  padding: 10px 0;
+  border: 1px solid orange
+}
+
+.user-details:hover {
+  cursor: pointer;
+}
+
+.user-name {
+  margin: 0 10px;
+  user-select: none;
+  border: 1px solid red;
+}
+
+.user-pic {
+  margin: 0 10px;
+  border: 1px solid green;
+}
+
+/* Posts */
+.posts-container {
+  box-sizing: border-box;
+  background-color: #E0E0E0;
+  text-align: left;
+  padding: 0 10px;
+  width: auto;
+}
+
+.post-title {
+  border: 1px solid black;
+}
+.post-body {
+  padding-left: 20px;
+}
+
+/* New Posts */
+.new-post-fields-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  border: 1px solid red;
+}
+
+.new-post-fields-container > input {
+  min-width: 0;
+  padding: 0.25em 0.25em;
+  margin: 0.25em 0;
+}
+/*
+.new-post-username {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.new-post-title {
+  max-width: 400;
+  display: flex;
+  width: 100%
+}
+*/
+
+.new-post-body {
+  resize: vertical;
+  padding: 0.25em 0.25em;
+  min-width: 200px;
+  min-height: 100px;
+  max-width: 400px;
+}
+
+@media (min-width: 321) {
+  .new-post-body {
+    max-width: 320px;
+  }
+}

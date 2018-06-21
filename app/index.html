@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="app.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.18/angular-ui-router.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="components/users-list/users-list.module.js"></script>
+    <script src="components/users-list/users-list.component.js"></script>
+    <script src="components/users-list/user/user.module.js"></script>
+    <script src="components/users-list/user/user.component.js"></script>
+    <script src="components/posts-list/posts-list.module.js"></script>
+    <script src="components/posts-list/posts-list.component.js"></script>
+    <script src="components/posts-list/post/post.module.js"></script>
+    <script src="components/posts-list/post/post.component.js"></script>
+    <script src="components/UI/new-post/new-post.module.js"></script>
+    <script src="components/UI/new-post/new-post.component.js"></script>
+
+    <title>JSON Parser</title>
+</head>
+
+<body ng-app="myApp">
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a ui-sref="posts" ui-sref-active="active">Posts</a>
+            </li>
+            <li>
+                <a ui-sref="newPost" ui-sref-active="active">New Post</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+</body>
+
+</html>
