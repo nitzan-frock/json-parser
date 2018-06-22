@@ -1,7 +1,24 @@
 /* app css stylesheet */
+:root {
+  --primary-color: #ccff90;
+  --primary-color-light: #ffffc2;
+  --primary-color-dark: #99cc60;
+  --text-color: black;
+}
+
 body {
+  font: normal 15px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
   margin: 0;
-  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto 0 auto;
+}
+
+.container * {
+  box-sizing: border-box;
 }
 
 .navbar > ul {
@@ -10,7 +27,8 @@ body {
   top: 0;
   position: fixed;
   width: 100%;
-  background-color: #4b50ac;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -21,49 +39,43 @@ body {
 }
 
 .navbar > ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 9px 16px;
-    text-decoration: none;
-    cursor: pointer;
+  display: block;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 500;
+  padding: 13px 16px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .navbar > ul li a:hover:not(.active) {
-  background-color: #a2a8d5;
+  background-color: var(--primary-color-dark);
 }
 
 .active {
-  background-color: #4b80ac;
-}
-
-.container {
-  margin-top: 45px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid pink;
+  background-color: var(--primary-color-light);
 }
 
 /* Users-list */
-.user-header {
+.header {
   display: flex;
   justify-content: center;
-  border:1px solid black;
+  text-align: center;
+  margin: 0;
+  border: solid black;
 }
+
 .users-container {
   position: relative;
   overflow: auto;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  margin: auto;
 }
 
 @media (min-width: 401px) {
   .users-container {
-    width: 400px;
+    max-width: 620px;
   }
 }
 
@@ -111,43 +123,61 @@ body {
 }
 
 /* New Posts */
-.new-post-fields-container {
+.flex-outer {
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--primary-color);
+  list-style-type: none;
+  padding: 10px;
+}
+
+.flex-outer li{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  width: 100vw;
-  border: 1px solid red;
 }
 
-.new-post-fields-container > input {
-  min-width: 0;
-  padding: 0.25em 0.25em;
-  margin: 0.25em 0;
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 20px;
 }
-/*
-.new-post-username {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-}
-.new-post-title {
-  max-width: 400;
-  display: flex;
-  width: 100%
-}
-*/
 
-.new-post-body {
-  resize: vertical;
-  padding: 0.25em 0.25em;
-  min-width: 200px;
-  min-height: 100px;
+.flex-outer li label {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.flex-outer li input::placeholder,
+.flex-outer li textarea::placeholder {
+  font-weight: 300;
+  letter-spacing: .09em;
+}
+
+.flex-outer li input,
+.flex-outer li textarea {
+  padding: 15px;
+  border: none;
+}
+
+.flex-outer > li > label {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+.flex-outer > li > label + * {
+  flex: 1 0 220px;
   max-width: 400px;
+  border: solid;
 }
 
-@media (min-width: 321) {
-  .new-post-body {
-    max-width: 320px;
-  }
+.flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  text-transform: uppercase;
+  background: var(--primary-color-dark);
+  color: var(--text-color);
+  border-radius: .09em;
+  letter-spacing: 0.09em;
 }

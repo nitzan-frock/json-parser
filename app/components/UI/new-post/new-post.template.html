@@ -1,9 +1,23 @@
-<div class="new-post-fields-container">
-    <input ng-model="$ctrl.username" class="new-post-username" type="text" placeholder="Username">
-    <br>
-    <input ng-model="$ctrl.title" class="new-post-title" type="text" placeholder="Post Title">
-    <br>
-    <textarea ng-model="$ctrl.body" class="new-post-body" type="body" placeholder="I like to code things."></textarea>
-</div>
+<h2 class="user-header">Newum Postus</h2>
 
-<button ng-click="$ctrl._submitPost()">submit</button>
+<ul class="flex-outer">
+    <li>
+        <label for="firstName">First Name</label>
+        <input ng-model="$ctrl.firstName" class="new-post-name" type="text" placeholder="First Name">
+    </li>
+    <li>
+        <label for="lastName">Last Name</label>
+        <input ng-model="$ctrl.lastName" class="new-post-name" type="text" placeholder="Last Name">
+    </li>
+    <li>
+        <label for="title">Title</label>
+        <input ng-model="$ctrl.title" class="new-post-title" type="text" placeholder="Post Title">
+    </li>
+    <li>
+        <label for="message">Message</label>
+        <textarea ng-model="$ctrl.body" class="new-post-body" type="body" placeholder="I like to code things."></textarea>
+    </li>
+    <li>
+        <button ng-click="$ctrl._submitPost()">submit</button>
+    </li>
+</ul>
