@@ -1,8 +1,8 @@
 /* app css stylesheet */
 :root {
-  --primary-color: #ccff90;
-  --primary-color-light: #ffffc2;
-  --primary-color-dark: #99cc60;
+  --primary-color: #ffa000;
+  --primary-color-light: #ffd149;
+  --primary-color-dark: #c67100;
   --text-color: black;
 }
 
@@ -14,7 +14,7 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 50px auto 0 auto;
+  margin: 65px auto 0 auto;
 }
 
 .container * {
@@ -32,6 +32,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  height: auto;
 }
 
 .navbar > ul li {
@@ -61,16 +62,18 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 0;
-  border: solid black;
+  max-width: 620px;
+  margin: auto;
+  padding: 15px 5px;
+  background: var(--primary-color);
 }
 
 .users-container {
   position: relative;
   overflow: auto;
   display: flex;
+  margin: auto;
   flex-direction: column;
-  border: 1px solid black;
 }
 
 @media (min-width: 401px) {
@@ -82,13 +85,13 @@ body {
 .user-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
 }
 
 .user-details {
   display: flex;
   padding: 10px 0;
-  border: 1px solid orange
+  background: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color-dark);
 }
 
 .user-details:hover {
@@ -98,7 +101,8 @@ body {
 .user-name {
   margin: 0 10px;
   user-select: none;
-  border: 1px solid red;
+  font-weight: 300;
+  letter-spacing: 0.09em;
 }
 
 .user-pic {
