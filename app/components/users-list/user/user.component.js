@@ -6,26 +6,22 @@ angular.
         bindings: {
             user: '<'
         },
-        controller: ['$http', function userController ($http) {
+        controller: ['$http', function userController($http) {
             const self = this;
 
             self.$onInit = function () {
                 self.showPosts = false;
             }
 
-            self.userClicked = function () {
-                console.log(self.user._id + ' clicked');
-                self.showPosts = !self.showPosts;
-                self._getPosts();
+            self.$onChanges = function (changes) {
+                if (changes.user) {
+                    self.user = angular.copy(self.user)
+                }
+                self.userIndex = self.user.index + 1;
             }
 
-            self._getPosts = function () {
-                const userIndex = self.user.index + 1;
-                if (!self.user.posts){
-                    $http.get('/assets/posts/posts-user' + userIndex + '.json').then(response => {
-                        self.user.posts = response.data;
-                    });
-                }
+            self.userClicked = function () {
+                self.showPosts = !self.showPosts;
             }
         }]
     });

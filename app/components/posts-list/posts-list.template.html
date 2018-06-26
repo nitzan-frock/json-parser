@@ -1,3 +1,4 @@
 <div class="posts-container">
-    <post ng-repeat="post in $ctrl.posts" post="post"></post>
+    <post ng-repeat="post in $ctrl.posts | limitTo: $ctrl.postLimit" post="post"></post>
+    <button ng-click="$ctrl.loadPosts()">Load more posts</button>
 </div>
